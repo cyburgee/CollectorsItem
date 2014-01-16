@@ -27,15 +27,15 @@ float cursor_tip_y;
 // SETUP FUNCTION --
 void setup() {
   bgs = new PImage[4];
-  bgs[0] = loadImage("/CollectorsItemApp/Contents/Resources/background_1.png");
-  bgs[1] = loadImage("/CollectorsItemApp/Resources/background_2.png");
-  bgs[2] = loadImage("/CollectorsItemApp/Contents/Resources/background_3.png");
-  bgs[3] = loadImage("/CollectorsItemApp/Contents/Resources/background_4.png");
+  bgs[0] = loadImage("background_1.png");
+  bgs[1] = loadImage("background_2.png");
+  bgs[2] = loadImage("background_3.png");
+  bgs[3] = loadImage("background_4.png");
   bg_num = 0;
   bg = bgs[bg_num];
   //size(displayWidth,displayHeight);
   size(1282,718);
-  PImage cursor = loadImage("/CollectorsItemApp/Contents/Resources/mac-osx-arrow-cursor.png");
+  PImage cursor = loadImage("mac-osx-arrow-cursor.png");
   xmin = new float[4];
   xmax = new float[4];
   ymin = new float[4];
@@ -59,12 +59,12 @@ void setup() {
   
   boxes = new FBox[4];
   box_im = new PImage[4];
-  box_im[0] = loadImage("/CollectorsItemApp/Contents/Resources/box_1.png");
-  box_im[1] = loadImage("/CollectorsItemApp/Contents/Resources/box_2.png");
-  box_im[2] = loadImage("/CollectorsItemApp/Contents/Resources/box_3.png");
-  box_im[3] = loadImage("/CollectorsItemApp/Contents/Resources/box_4.png");
+  box_im[0] = loadImage("box_1.png");
+  box_im[1] = loadImage("box_2.png");
+  box_im[2] = loadImage("box_3.png");
+  box_im[3] = loadImage("box_4.png");
   
-  peanutImage = loadImage("/CollectorsItemApp/Contents/Resources/peanut.png");
+  peanutImage = loadImage("peanut.png");
   
   Fisica.init(this);
   world = new FWorld();
@@ -127,8 +127,8 @@ void mouseReleased(){
 }
 
 void launchDebris(){
-  int boxNum = int(random(0,3));
-  int peanutNum = int(random(25,60));
+  int boxNum = int(random(1,3));
+  int peanutNum = int(random(15,30));
   FBox debrisBox = new FBox(box_im[boxNum].width,box_im[boxNum].height);
   debrisBox.setPosition(random(box_im[boxNum].width,bg.width-box_im[boxNum].width),random(box_im[boxNum].height,bg.height-box_im[boxNum].height));
   debrisBox.attachImage(box_im[boxNum]);
